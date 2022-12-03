@@ -8,8 +8,15 @@ router.get('/', (req, res, next)=>{
 });
 
 router.post('/', (req, res, next)=>{
+    const animal = {
+        id: req.body.id,
+        name: req.body.name,
+        species: req.body.species,
+
+    }
     res.status(201).json({
-        message: 'Animals POST request'
+        message: 'Animals POST request',
+        createdAnimal: animal
     })
 });
 
